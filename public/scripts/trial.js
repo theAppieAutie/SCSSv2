@@ -167,7 +167,10 @@ const endTrial = () => {
   
   let inputs = [];
   for (let [k,v] of packetArray.entries()) {
-   inputs.push({user : v.classification, advisor : v.recommendation, accepted : v.acceptedRecommendation, time : v.inputTime});
+    if (v.classification !== v.recommendation) {
+      v.acceptedRecommendation = false;
+    }
+    inputs.push({user : v.classification, advisor : v.recommendation, accepted : v.acceptedRecommendation, time : v.inputTime});
   }
   console.log(inputs);
   handleInput(inputs);
