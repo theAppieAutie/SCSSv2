@@ -81,7 +81,7 @@ router.post("/addTrial", async (req, res) => {
   
     const blob = await req.flaskServices.downloadVideo();
     // const filePath = convertBlobToFile(blob);
-    const trialVideoUrl = `/${req.session.username}-${req.session.trialNumber}`
+    const trialVideoUrl = `/EXP 1/${req.session.username}-${req.session.trialNumber}`
     await req.cloudServices.uploadVideo(blob, trialVideoUrl)
       .catch(console.error);
     
