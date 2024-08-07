@@ -6,17 +6,17 @@ const fs = require('fs');
 
 const router = express.Router();
 
-async function convertBlobToFile(blob) {
-  const arrayBuffer = await blob.arrayBuffer();
-  const buffer = Buffer.from(arrayBuffer);
+// async function convertBlobToFile(blob) {
+//   const arrayBuffer = await blob.arrayBuffer();
+//   const buffer = Buffer.from(arrayBuffer);
   
-  const tempFilePath = path.join(__dirname, 'temp', 'facetracking.mp4');
+//   const tempFilePath = path.join(__dirname, 'temp', 'facetracking.mp4');
   
-  fs.mkdirSync(path.dirname(tempFilePath), {recursive:true});
-  fs.writeFileSync(tempFilePath, buffer);
+//   fs.mkdirSync(path.dirname(tempFilePath), {recursive:true});
+//   fs.writeFileSync(tempFilePath, buffer);
 
-  return tempFilePath
-}
+//   return tempFilePath
+// }
 
 
 // GET /game: Render the game page based on user group
@@ -75,10 +75,12 @@ router.post("/addTrial", async (req, res) => {
     } else {
       trialType = 'main';
     }
+
+   
    
   
     const blob = await req.flaskServices.downloadVideo();
-    const filePath = convertBlobToFile(blob);
+    // const filePath = convertBlobToFile(blob);
     const trialVideoUrl = `/${req.session.username}-${req.session.trialNumber}`
     await req.cloudServices.uploadVideo(blob, trialVideoUrl)
       .catch(console.error);

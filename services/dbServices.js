@@ -105,34 +105,6 @@ const insertFeedback = async (participant, feedback) => {
     }
 };
 
-const insertDropbox = async (access, refresh) => {
-    const client = await pool.connect();
-    try {
-        const query = 'INSERT INTO dropbox (access_token, refresh_token) VALUES ($1, $2);';
-        const values = [access, refresh];
-        const result = await client.query(query, values);
-    } catch (err) {
-        console.error(err);
-    } finally {
-        client.release();
-    }
-};
-
-const getDropbox = async () => {
-    const client = await pool.connect();
-    try {
-        const query = 'SELECT * FROM dropbox ORDER BY id DESC LIMIT 1;';
-        const result = await client.query(query);
-        const access = result.rows[0].access_token;
-        const refresh = result.rows[0].refresh_token;
-        return {access, refresh};
-    } catch (err) {
-        console.error(err);
-    } finally {
-        client.release();
-    }
-}
-
 const dbServices = {
     insertFeedback,
     insertItem,
@@ -141,8 +113,6 @@ const dbServices = {
     insertTrial,
     insertParticipant,
     getNextId,
-    insertDropbox,
-    getDropbox,
 };
 
 module.exports =   dbServices;
