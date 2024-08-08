@@ -37,7 +37,7 @@ router.get('/game', async (req, res) => {
     req.session.trialStartTime = new Date().toISOString();
     
     const packetArray = req.session.packetArray.map(x => x);
-    // req.experiment.setCurrentStage();
+
   
     // Define recommendations based on group
     switch (condition) {
@@ -58,7 +58,7 @@ router.get('/game', async (req, res) => {
     res.render('game.ejs', { conditionText, group, censorship, censoredArrayNumber, packetArray: JSON.stringify(packetArray)});
   });
   
-  //  handle adding data to Experiment
+  //  handle adding data to db
 router.post("/addTrial", async (req, res) => {
     // get request
     const inputs = req.body['input'];

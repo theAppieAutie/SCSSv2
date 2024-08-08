@@ -1,16 +1,16 @@
 // Generate a random IP address
-const generateRandomIP = () => {
+export const generateRandomIP = () => {
   return `${Math.floor(Math.random() * 256)}.${Math.floor(Math.random() * 256)}.${Math.floor(Math.random() * 256)}.${Math.floor(Math.random() * 256)}`;
 };
 
 // Generate random CheckSum value
-const generateRandomCheckSum = () => {
+export const generateRandomCheckSum = () => {
   const values = ['Valid', 'Invalid', 'Zero'];
   return values[Math.floor(Math.random() * values.length)];
 }
 
 //  Generate random 24hr clock time
-const generateRandomTime = () => {
+export const generateRandomTime = () => {
   let hours = Math.floor(Math.random() * 24);
   let minutes = Math.floor(Math.random() * 60);
 
@@ -21,7 +21,7 @@ const generateRandomTime = () => {
 }
 
 // Generate a random country from a predefined list
-const generateRandomCountry = () => {
+export const generateRandomCountry = () => {
   const countries = [
     "Itarnia",
     "Dinlan",
@@ -49,34 +49,24 @@ const generateRandomCountry = () => {
 };
 
 // Generate a random packet size between 500 and 1500 bytes
-const generateRandomPacketSize = () => {
+export const generateRandomPacketSize = () => {
   return `${Math.floor(Math.random() * 1000) + 500} bytes`;
 };
 
 // Generate a random protocol from a predefined list
-const generateRandomProtocol = () => {
+export const generateRandomProtocol = () => {
   const protocols = ["TCP", "UDP", "ICMP", "HTTP", "HTTPS"];
   return protocols[Math.floor(Math.random() * protocols.length)];
 };
 
 // Generate a random connection time between 0 and 59 seconds
-const generateRandomConnectionTime = () => {
+export const generateRandomConnectionTime = () => {
   return `${Math.floor(Math.random() * 60)} s`;
 };
 
 // Generate a random SSL/TLS certificate status
-const generateRandomCertificates = () => {
+export const generateRandomCertificates = () => {
   const statuses = ["Valid", "Invalid", "Self-signed", "Expired"];
   return statuses[Math.floor(Math.random() * statuses.length)];
 };
 
-module.exports = {
-  generateRandomCertificates,
-  generateRandomCheckSum,
-  generateRandomConnectionTime,
-  generateRandomCountry,
-  generateRandomIP,
-  generateRandomPacketSize,
-  generateRandomProtocol,
-  generateRandomTime
-};

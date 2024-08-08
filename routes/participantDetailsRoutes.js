@@ -34,8 +34,7 @@ router.post("/login", async (req, res) => {
     let groupName = groupNumber === 0 ? "A" : 'B';
     let censoredInfo = censoredInfoNumber === 0 ? 'RIO' : 'SIO';
   
-    // let experiment = new Experiment();
-    // experiment.init(participantId, condition, groupName, censoredInfo);
+
     
     const packetArray = setPacketArray();
     req.session.packetArray = packetArray;

@@ -5,7 +5,7 @@ if (process.env.NODE_ENV !== "production") {
   
 // Import modules and configurations
 const express = require('express');
-const Experiment = require('./public/scripts/experiment.js');
+
 const fs = require('fs');
 const path = require('path');
 const bcrypt = require('bcrypt');
