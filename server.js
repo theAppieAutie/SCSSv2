@@ -23,7 +23,7 @@ const scalesRoutes = require("./routes/scalesRoutes.js");
 const trialRoutes = require("./routes/trialRoutes.js");
 const dbServices = require("./services/dbServices.js");
 const flaskServices = require("./services/flaskServices.js");
-const cloudServices = require("./services/cloudServices.js");fs.rmSync
+const cloudServices = require("./services/cloudServices.js");
 
   
 const app = express();
