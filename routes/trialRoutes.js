@@ -25,7 +25,7 @@ router.get('/game', async (req, res) => {
     if (!req.session.condition) {
       return res.redirect('/');
     }
-    await req.flaskServices.handleRecording("start");
+    // await req.flaskServices.handleRecording("start");
    
     // Retrieve experiment info
     
@@ -63,7 +63,7 @@ router.post("/addTrial", async (req, res) => {
     // get request
     const inputs = req.body['input'];
   
-    await req.flaskServices.handleRecording("stop");
+    // await req.flaskServices.handleRecording("stop");
   
     // create and insert trial data
     req.session.trialEndTime = new Date().toISOString();
@@ -79,11 +79,11 @@ router.post("/addTrial", async (req, res) => {
    
    
   
-    const blob = await req.flaskServices.downloadVideo();
+    // const blob = await req.flaskServices.downloadVideo();
     // const filePath = convertBlobToFile(blob);
     const trialVideoUrl = `/EXP 1/${req.session.username}-${req.session.trialNumber}`
-    await req.cloudServices.uploadVideo(blob, trialVideoUrl)
-      .catch(console.error);
+    // await req.cloudServices.uploadVideo(blob, trialVideoUrl)
+    //   .catch(console.error);
     
   
     

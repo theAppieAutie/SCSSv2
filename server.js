@@ -84,7 +84,7 @@ app.use('/trial', trialRoutes);
 
 
 app.get('/', (req, res) => {
-    ("getting route view")
+    console.log("getting route view")
     res.render('information')
 })
 
