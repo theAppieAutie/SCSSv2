@@ -10,7 +10,7 @@ exports.generateRandomCheckSum = () => {
 }
 
 //  Generate random 24hr clock time
-exportsgenerateRandomTime = () => {
+exports.generateRandomTime = () => {
   let hours = Math.floor(Math.random() * 24);
   let minutes = Math.floor(Math.random() * 60);
 
