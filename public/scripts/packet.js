@@ -1,5 +1,5 @@
 // import dataGenerator functions
-import { generateRandomCheckSum, generateRandomTime, generateRandomIP, generateRandomCountry } from './dataGenerators';
+const { generateRandomCheckSum, generateRandomTime, generateRandomIP, generateRandomCountry } = require('./dataGenerators');
 
 // create overall packet - parameter = type of packet [hostile, safe , suspect]
 function PacketFactory(type) {
