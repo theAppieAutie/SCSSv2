@@ -1,7 +1,11 @@
 {
     "name": "scss-altered-for-experiment",
-    "version": "1.0.0",
+    "version": "2.0.0",
     "main": "server.js",
+    "builds": [
+          { "src": "server.js", "use": "@vercel/node" }
+        ],
+      
     "scripts": {
         "dev": "nodemon server.js --ignore log.json",
         "start": "node server.js",
