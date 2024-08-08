@@ -1,6 +1,6 @@
 
 // configure changable data
-exports.config = {
+export const config = {
     trialLength: .1, // minutes for each trial
     advisorAccuracy : 90, // int representing percentage of the time advisor is correct
     packetTimeOnScreen : 10, // seconds it takes for each packet to navigate to the centre
