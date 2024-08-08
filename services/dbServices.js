@@ -4,11 +4,10 @@ const {Pool} = require('pg');
 
 // Set up connection to DB and CRUD ops
 const pool = new Pool({
-    user: process.env.DB_USER,
-    host: process.env.DB_HOST,
-    database: process.env.DB_DATABASE,
-    password: process.env.DB_PASSWORD,
-    port: process.env.DB_PORT,
+    connectionString: process.env.SUPABASE_DB_URL,
+    ssl:{
+        rejectUnauthorized: false
+    }
   });
   
 pool.connect()
