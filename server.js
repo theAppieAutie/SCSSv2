@@ -27,7 +27,8 @@ const cloudServices = require("./services/cloudServices.js");
 
   
 const app = express();
-  
+
+console.log("views and static files setting up")
 // Configure views
 app.set("views", path.join(__dirname, "./views"));
 app.set("view engine", "ejs");
@@ -61,7 +62,7 @@ app.use((req, res, next) => {
     next();
 })
 
-
+console.log("setting up session config")
 // Session Configuration
 app.use(
     session({
@@ -71,6 +72,7 @@ app.use(
     })
 );
 
+console.log("setting up routes")
 // routes
 app.use('/participant', participantDetailsRoutes);
 app.use('/information', informationRoutes);
@@ -82,6 +84,7 @@ app.use('/trial', trialRoutes);
 
 
 app.get('/', (req, res) => {
+    ("getting route view")
     res.render('information')
 })
 
