@@ -1,5 +1,5 @@
-import { initializeClassificationButtons, confirmClassification } from './classification.js';
-import {config} from "./config.js"
+const { initializeClassificationButtons, confirmClassification } = require('./classification.js');
+const {config} = require('./config.js');
 
 //  object holding censored item list to add blur
 const censoredOptions = {
