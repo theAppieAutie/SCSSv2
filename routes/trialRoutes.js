@@ -88,7 +88,7 @@ router.post("/addTrial", async (req, res) => {
   
     
   
-    const trialId = await req.dbServices.insertTrial(req.session.username, trialType, trialNumber, req.session.trialStartTime, req.session.trialEndTime, trialVideoUrl.toString());
+    const trialId = await req.dbServices.insertTrial(req.session.username, trialType, trialNumber, req.session.trialStartTime, req.session.trialEndTime, trialVideoUrl);
     trialNumber++;
     req.session.trialNumber = trialNumber;
 
