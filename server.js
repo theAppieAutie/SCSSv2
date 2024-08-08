@@ -85,9 +85,11 @@ app.get('/', (req, res) => {
     res.render('information')
 })
 
+const port = process.env.PORT || 5050;
+
 // Start the server
-app.listen(5050, () => {
-    console.log(`Server running at http://localhost:5050`);
+app.listen(port, () => {
+    console.log(`Server running on port ${port}`);
 });
 
 module.exports = app;
